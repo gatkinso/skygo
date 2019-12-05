@@ -25,6 +25,7 @@ type skywireServer struct {
 func (s *skywireServer) Generate(ctx context.Context, req *pb.SkywireRequest) (*pb.SkywireResponse, error) {
 	res := pb.SkywireResponse{Meta: &pb.RequestMetadata{Id: 0}}
 	res.GetMeta().Id = req.GetMeta().Id
+	log.Println(res)
 	return &res, nil
 }
 

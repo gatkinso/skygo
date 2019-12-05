@@ -1,0 +1,3 @@
+/home/geoffrey/go/src/github.com/gatkinso/skygo/c++/client++/build/CMakeFiles/rebuild_cache.dir
+/home/geoffrey/go/src/github.com/gatkinso/skygo/c++/client++/build/CMakeFiles/client++.dir
+/home/geoffrey/go/src/github.com/gatkinso/skygo/c++/client++/build/CMakeFiles/edit_cache.dir
