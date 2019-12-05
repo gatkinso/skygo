@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package skywire;
+
+service Skywire {
+    rpc Generate(SkywireRequest) returns (SkywireResponse) {}
+}
+
+message Member
+{
+    string type = 10;
+    string name = 20;
+    uint32 endian = 30;
+}
+
+message Stencil
+{
+    map<string, string> string_values = 10;
+//    map<string, int32> int_values = 20;
+//    map<string, bool> bool_values = 30;
+
+    map<uint32, Member> members = 40;
+
+    repeated string includes = 100;
+    repeated string native_types = 101; 
+}
+
+message RequestMetadata {
+    uint64 id = 10;
+    bool generate_tests = 20;
+}
+
+message SkywireRequest {
+    RequestMetadata meta = 10;
+
+    Stencil msg_spec = 100;
+    Stencil lang_spec = 110;
+}
+
+message SkywireResponse {
+    RequestMetadata meta = 10;
+
+    string impl = 100;
+    string header = 120;
+    string test = 130;
+}
